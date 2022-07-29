@@ -1,7 +1,9 @@
 import React from "react";
 import Interests from "./Interests";
+import { UserContext } from "../context/user"
 
-function Profile({ user, theme }) {
+function Profile({theme} ) {
+  const { user } = useContext(UserContext);
   if (!user) return <h2>Please Login To View Profile</h2>;
   return (
     <div>
@@ -10,5 +12,4 @@ function Profile({ user, theme }) {
     </div>
   );
 }
-
 export default Profile;
